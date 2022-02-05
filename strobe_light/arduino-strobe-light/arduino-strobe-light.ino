@@ -12,14 +12,14 @@ void loop() {
   // Analog red gives a value between 0-1023
   int potValue = analogRead(potPin);
   // Convert this to a sensible range of values for the strobe delay
-  int refreshRate = map(potValue, 0, 1023, 100, 0);
+  int refreshRate = map(potValue, 0, 1023, 4000, 2000);
   
   // Turn the strobe LED on
   digitalWrite(strobePin, HIGH);
-  delay(refreshRate);
+  delay(10);
   // Turn it off again
   digitalWrite(strobePin, LOW);
-  delay(refreshRate);
+  delay(refreshRate-10);
 
   Serial.println(potValue);
   Serial.println(refreshRate);
