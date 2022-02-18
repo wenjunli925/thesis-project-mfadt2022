@@ -11,9 +11,9 @@ void setup() {
 void loop() {
  digitalWrite(pump1, HIGH); // pump1 deactivated
  digitalWrite(pump2, LOW); // variant input/output
- delay(2000);
+ delay(500);
  
  digitalWrite(pump1, LOW); // pump1 activated
  digitalWrite(pump2, HIGH); // variant input/output 
- delay(2000);
+ delay(500);
 }
