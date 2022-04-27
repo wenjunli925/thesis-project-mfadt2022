@@ -1,5 +1,5 @@
-byte pump1 = 7;
-byte pump2 = 10;
+byte pump1 = 6;
+byte pump2 = 7;
 void setup() {
  Serial.begin(9600);
  while (!Serial);  
@@ -9,11 +9,11 @@ void setup() {
 // digitalWrite(pump2, LOW); // variant input/output
 }
 void loop() {
- digitalWrite(pump1, HIGH); // pump1 deactivated
- digitalWrite(pump2, LOW); // variant input/output
+ digitalWrite(pump1, LOW); // pump1 deactivated
+ digitalWrite(pump2, HIGH); // variant input/output
  delay(500);
  
- digitalWrite(pump1, LOW); // pump1 activated
- digitalWrite(pump2, HIGH); // variant input/output 
+ digitalWrite(pump1, HIGH); // pump1 activated
+ digitalWrite(pump2, LOW); // variant input/output 
  delay(500);
 }
