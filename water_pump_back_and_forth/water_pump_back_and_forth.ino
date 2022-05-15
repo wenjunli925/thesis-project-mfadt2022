@@ -9,7 +9,8 @@ int buttonState_2 = 0;
 
 const int ledPin = 13;
 
-int wait = 500;
+int wait_1 = 2500;
+int wait_2 = 500;
 int i = 0;
 
 void setup() {
@@ -31,53 +32,45 @@ void setup() {
 void loop() {
   buttonState_1 = digitalRead(buttonPin_1);
   buttonState_2 = digitalRead(buttonPin_2);
-  Serial.println(buttonState_1);
-  Serial.println(buttonState_2);
+//  Serial.println(buttonState_1);
+//  Serial.println(buttonState_2);
 
-  if (buttonState_1 == HIGH || buttonState_2 == HIGH) {
+  if (buttonState_1 == HIGH) {
     digitalWrite(ledPin, HIGH);
     
-    digitalWrite(relay[4], LOW);
-    digitalWrite(relay[5], HIGH);
+    digitalWrite(relay[2], HIGH);
+    digitalWrite(relay[5], LOW);
     
     digitalWrite(relay[0], LOW);
     digitalWrite(relay[1], HIGH);
-    digitalWrite(relay[2], HIGH);
     digitalWrite(relay[3], HIGH);
-    delay(wait);
+    digitalWrite(relay[4], HIGH);
+    delay(wait_1);
 
     digitalWrite(relay[0], HIGH);
     digitalWrite(relay[1], LOW);
-    digitalWrite(relay[2], HIGH);
     digitalWrite(relay[3], HIGH);
-    delay(wait);
+    digitalWrite(relay[4], HIGH);
+    delay(wait_1);
   }
-  if(buttonState_1 == LOW || buttonState_2 == LOW){
+  if(buttonState_1 == LOW){
     digitalWrite(ledPin, LOW);
     
-    digitalWrite(relay[4], HIGH);
-    digitalWrite(relay[5], LOW);
+    digitalWrite(relay[2], LOW);
+    digitalWrite(relay[5], HIGH);
     
     digitalWrite(relay[0], HIGH);
     digitalWrite(relay[1], HIGH);
-    digitalWrite(relay[2], LOW);
-    digitalWrite(relay[3], HIGH);
-    delay(wait);
+    digitalWrite(relay[3], LOW);
+    digitalWrite(relay[4], HIGH);
+    delay(wait_2);
 
     digitalWrite(relay[0], HIGH);
     digitalWrite(relay[1], HIGH);
-    digitalWrite(relay[2], HIGH);
-    digitalWrite(relay[3], LOW);
-    delay(wait);
+    digitalWrite(relay[3], HIGH);
+    digitalWrite(relay[4], LOW);
+    delay(wait_2);
   }
-
-//  digitalWrite(relay[0], LOW);
-//  digitalWrite(relay[1], HIGH);
-//  delay(wait);
-//
-//  digitalWrite(relay[0], HIGH);
-//  digitalWrite(relay[1], LOW);
-//  delay(wait);
 
 
 

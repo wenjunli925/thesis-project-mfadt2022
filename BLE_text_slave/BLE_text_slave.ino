@@ -22,16 +22,16 @@ void loop() {
     val = Serial.read();
 
     //test bluetooth connection with a led
-//    if (val == 100  && pos == 0)
-//    {
-//      digitalWrite(led, HIGH);
-//      pos = 1;
-//    }
-//    else if (val == 100 && pos == 1)
-//    {
-//      digitalWrite(led, LOW);
-//      pos = 0;
-//    }
+    if (val == 100  && pos == 0)
+    {
+      digitalWrite(led, HIGH);
+      pos = 1;
+    }
+    else if (val == 100 && pos == 1)
+    {
+      digitalWrite(led, LOW);
+      pos = 0;
+    }
 
 
     if (val == 100)

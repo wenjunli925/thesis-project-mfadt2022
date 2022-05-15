@@ -1,4 +1,5 @@
 #include "Wire.h"
+#include <Servo.h>
 
 //I2C addresses 
 #define    MPU9250_ADDRESS            0x68
@@ -14,6 +15,10 @@
 
 
 #define button 8
+#define SERVO_PIN    9
+Servo myServo;
+int servoAngle = 90;
+
 int val;
 
 
@@ -57,7 +62,7 @@ void setup() {
   // Request first magnetometer single measurement
   I2CwriteByte(MAG_ADDRESS,0x0A,0x01);
 
-  
+  myServo.attach(SERVO_PIN); 
   pinMode(button, INPUT);
 }
 
@@ -86,7 +91,16 @@ void loop() {
   if (ax > 30)
   {
     Serial.write(100);
-    delay(100);
+    servoAngle = 180;
+
+//    delay(100);
+    
+  } else{
+    servoAngle = 0;
   }
+  
   delay(50);
+
+  Serial.println(servoAngle);
+  myServo.write(servoAngle);
 }
