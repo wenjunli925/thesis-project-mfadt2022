@@ -90,16 +90,17 @@ void loop() {
   val = digitalRead(button);
   if (ax > 30)
   {
-    Serial.write(100);
+//    Serial.write(100);
     servoAngle = 180;
 
-//    delay(100);
+    delay(100);
     
   } else{
     servoAngle = 0;
+    delay(100);
   }
   
-  delay(50);
+
 
   Serial.println(servoAngle);
   myServo.write(servoAngle);
